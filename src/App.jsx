@@ -6,22 +6,21 @@ import ForBusiness from './components/ForBusiness';
 import InDevelopment from './components/InDevelopment';
 import AboutFund from './components/AboutFund';
 import Contacts from './components/Contacts';
-import './App.css'; // Импортируем стили
-import logo from './assets/images/logo.png'; // Предполагаем, что логотип находится в папке src
+import './App.css';
+import logo from './assets/images/logo.png';
+import fundLogo from './assets/images/fund-logo.png'; // Предполагаем, что логотип фонда находится в этой папке
 
 const App = () => {
     const [isDropdownVisible, setDropdownVisible] = useState(false);
 
-    // Обработчики для управления видимостью выпадающего списка
     const handleMouseEnter = () => {
         setDropdownVisible(true);
     };
 
     const handleMouseLeave = () => {
-        // Тайм-аут для предотвращения мгновенного исчезновения меню
         setTimeout(() => {
             setDropdownVisible(false);
-        }, 200); // 200 мс — достаточно времени, чтобы переместить курсор к выпадающему меню
+        }, 200);
     };
 
     return (
@@ -35,12 +34,22 @@ const App = () => {
                             onMouseLeave={handleMouseLeave}
                         >
                             <img src={logo} alt="Логотип компании" className="logo" />
+                            {/* Добавляем логотип фонда рядом с основным логотипом */}
+                            <Link to="/about-fund" className="fund-logo-link">
+                                <img
+                                    src={fundLogo}
+                                    alt="Логотип фонда"
+                                    className="fund-logo"
+                                    style={{ filter: "brightness(1.1) contrast(1.2)" }}  // Делаем ярче и контрастнее
+                                />
+                            </Link>
+
                             <ul className={`nav-links ${isDropdownVisible ? 'visible' : ''}`}>
                                 <li><Link to="/card-site">О компании</Link></li>
                                 <li><Link to="/products">Продукты</Link></li>
                                 <li><Link to="/for-business">Для бизнеса</Link></li>
                                 <li><Link to="/in-development">В разработке</Link></li>
-                                <li><Link to="/about-fund">О фонде</Link></li>
+                                {/*<li><Link to="/about-fund">О фонде</Link></li>*/}
                                 <li><Link to="/contacts">Контакты</Link></li>
                             </ul>
                         </div>
