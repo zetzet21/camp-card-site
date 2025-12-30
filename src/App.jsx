@@ -53,7 +53,7 @@ const App = () => {
                                 <li><Link to="/contacts">Контакты</Link></li>
                             </ul>
                         </div>
-                        <h1 className="company-name">НОВАТЕХ</h1>
+                        <h1 className="company-name">Лагерь+</h1>
                     </div>
                 </header>
                 <main className="content">

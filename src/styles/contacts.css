@@ -36,14 +36,14 @@
 
 .contacts-page-content h2 {
     font-size: 2.5rem;
-    color: #4a148c;
+    color: #2d7c17;
     margin-bottom: 20px;
 }
 
 .contacts-page-content .company-contact-info h3,
 .contacts-page-content .author-info h3 {
     font-size: 1.75rem;
-    color: #4a148c;
+    color: #2d7c17;
     margin-bottom: 15px;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .contacts-page-content a {
-    color: #4a148c;
+    color: #2d7c17;
     text-decoration: none;
 }
 
